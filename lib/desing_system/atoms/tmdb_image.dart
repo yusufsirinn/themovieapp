@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:themovieapp/core/enums/size_enum.dart';
 
 class TMDBImage extends StatelessWidget {
   final String? path;
@@ -6,6 +7,7 @@ class TMDBImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (path == null) return _placeHolder();
     return Image.network(
       _imageTMDBFullUrl(path),
       fit: BoxFit.fitHeight,
@@ -22,7 +24,14 @@ class TMDBImage extends StatelessWidget {
   }
 
   Widget _placeHolder() {
-    return const Center(child: Text('TMDB'));
+    return Center(
+      child: Text(
+        '🎬',
+        style: TextStyle(
+          fontSize: AppSize.xxl.value().toDouble(),
+        ),
+      ),
+    );
   }
 
   String _imageTMDBFullUrl(String? path) {
