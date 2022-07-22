@@ -1,12 +1,14 @@
 import 'package:async/async.dart';
 
+import '../enums/duration_enum.dart';
+
 mixin DebounceMixin {
   CancelableOperation<void>? _cancelableOperation;
 
   Future<void> debounce(Function action) async {
     _cancelableOperation?.cancel();
     _cancelableOperation = CancelableOperation.fromFuture(
-      Future.delayed(const Duration(seconds: 1)),
+      Future.delayed(AppDuration.low.value()),
       onCancel: () {},
     );
 

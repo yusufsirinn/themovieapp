@@ -8,11 +8,11 @@ abstract class SearchMoviesEvent extends Equatable {
   List<Object?> get props => [];
 }
 
-class SearchMoviesQuery extends SearchMoviesEvent {
+class SearchMovies extends SearchMoviesEvent {
   final String query;
-  const SearchMoviesQuery({required this.query});
+  const SearchMovies({required this.query});
 }
 
-class MoviesPagination extends SearchMoviesEvent {
-  const MoviesPagination();
+class MoreMovies extends SearchMoviesEvent {
+  const MoreMovies();
 }

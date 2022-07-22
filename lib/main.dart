@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:themovieapp/core/localization/tmdb_app_localizations.dart';
 
-import 'views/home/home_page.dart';
+import 'views/search_movies/search_movies_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,9 +13,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
       theme: ThemeData(),
-      home: const HomePage(),
+      home: const SearchMoviesPage(),
+      localizationsDelegates: TMDBAppLocalizations.localizationsDelegates,
+      supportedLocales: TMDBAppLocalizations.supportedLocales,
     );
   }
 }
