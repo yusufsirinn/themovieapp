@@ -16,7 +16,9 @@ class MovieDetails extends Movie {
     super.voteAverage,
   });
 
-  MovieDetails.fromJson(Map<String, dynamic> json) {
+  @override
+  MovieDetails fromJson(Map<String, dynamic> json) {
+    id = json['id'];
     backdropPath = json['backdrop_path'];
     if (json['genres'] != null) {
       genres = <Genres>[];
@@ -25,6 +27,10 @@ class MovieDetails extends Movie {
       });
     }
     overview = json['overview'];
+    posterPath = json['posterPath'];
+    voteAverage = json['voteAverage'];
+    title = json['title'];
+    return this;
   }
 
   MovieDetails setDetails({required MovieDetails movieDetails}) {
