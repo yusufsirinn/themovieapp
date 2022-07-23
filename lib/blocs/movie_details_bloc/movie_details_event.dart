@@ -9,7 +9,7 @@ abstract class MovieDetailsEvent extends Equatable {
 }
 
 class MovieDetailsFetched extends MovieDetailsEvent {
-  final int id;
+  final int? id;
 
   const MovieDetailsFetched({required this.id});
 }

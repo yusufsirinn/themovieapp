@@ -1,11 +1,16 @@
 part of '../search_movies_page.dart';
 
-class SearchMoviesTextField extends StatelessWidget with DebounceMixin {
+class SearchMoviesTextField extends StatefulWidget {
   final void Function(String) onChange;
   final int minLengthForWordToSearch;
 
-  SearchMoviesTextField({Key? key, required this.onChange, this.minLengthForWordToSearch = 2}) : super(key: key);
+  const SearchMoviesTextField({Key? key, required this.onChange, this.minLengthForWordToSearch = 2}) : super(key: key);
 
+  @override
+  State<SearchMoviesTextField> createState() => _SearchMoviesTextFieldState();
+}
+
+class _SearchMoviesTextFieldState extends State<SearchMoviesTextField> with DebounceMixin {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -32,8 +37,8 @@ class SearchMoviesTextField extends StatelessWidget with DebounceMixin {
   _onChanged(String value) {
     debounce(
       () {
-        if (value.length >= minLengthForWordToSearch) {
-          onChange(value);
+        if (value.length >= widget.minLengthForWordToSearch) {
+          widget.onChange(value);
         }
       },
     );

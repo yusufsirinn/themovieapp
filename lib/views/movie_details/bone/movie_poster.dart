@@ -11,7 +11,29 @@ class MoviePoster extends StatelessWidget {
     var movie = context.read<MovieDetailsBloc>().state.movie;
     return SizedBox(
       width: size.width * .3,
-      child: TMDBImage(path: movie?.posterPath),
+      child: AspectRatio(
+        aspectRatio: 2 / 3,
+        child: Stack(
+          alignment: Alignment.bottomLeft,
+          children: [
+            TMDBImage(path: movie?.posterPath),
+            Container(
+              margin: AppPadding.large.value(),
+              width: AppSize.xxl.value(),
+              height: AppSize.xxl.value(),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                border: Border.all(
+                  width: 1,
+                  color: Colors.black,
+                ),
+              ),
+              alignment: Alignment.center,
+              child: Text(movie?.voteAverage.toString() ?? ''),
+            )
+          ],
+        ),
+      ),
     );
   }
 }
