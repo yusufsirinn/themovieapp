@@ -16,6 +16,7 @@ class _SearchMoviesTextFieldState extends State<SearchMoviesTextField> with Debo
     return Padding(
       padding: AppPadding.large.value(),
       child: TextField(
+        key: const ValueKey(SearchMoviesTextField),
         cursorColor: Colors.grey,
         decoration: InputDecoration(
           hintText: AppLocalizations.of(context).query,
