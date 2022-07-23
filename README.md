@@ -1,16 +1,30 @@
-# themovieapp
+# The Movie App
 
-A new Flutter project.
+This project allows you to search and list movies.
+
+## Screen Shots
+<p float="left">
+  <img src="app_screenshot/screenshot1.png" width="300" />
+  <img src="app_screenshot/screenshot2.png" width="300" />
+  <img src="app_screenshot/screenshot3.png" width="300" />
+  <img src="app_screenshot/screenshot4.png" width="300" />
+  
+</p>
+
+## Libraries
+
+- flutter_localizations -> used for localization
+- flutter_bloc -> used for state managment
+- dio -> user for network request
+- bloc_concurrency -> used to not send multiple network requests
+- async -> used to trigger an action when the user stopped typing
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This is an example of how you may give instructions on setting up your project locally.
+To get a local copy up and running follow these simple example steps.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```sh
+flutter gen-l10n
+flutter run
+```
