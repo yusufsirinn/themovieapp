@@ -9,7 +9,7 @@ class MovieDetailsState extends BaseState {
   });
 
   @override
-  List<Object?> get props => [movie, status];
+  List<Object?> get props => [movie?.id, status];
 
   MovieDetailsState copyWith({
     MovieDetails? movie,

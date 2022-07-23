@@ -9,7 +9,6 @@ mixin DebounceMixin {
     _cancelableOperation?.cancel();
     _cancelableOperation = CancelableOperation.fromFuture(
       Future.delayed(AppDuration.low.value()),
-      onCancel: () {},
     );
 
     await _cancelableOperation?.value.then((result) async {

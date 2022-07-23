@@ -1,4 +1,3 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -8,9 +7,10 @@ import '../../core/enums/padding_enum.dart';
 import '../../core/enums/status_enum.dart';
 import '../../core/extensions/scroll_controller_extensions.dart';
 import '../../core/utils/debouncer_mixin.dart';
-import '../../desing_system/atoms/atoms/indicator.dart';
-import '../../desing_system/atoms/atoms/tmdb_image.dart';
+import '../../desing_system/atoms/indicator.dart';
+import '../../desing_system/atoms/tmdb_image.dart';
 import '../../models/movie_model.dart';
+import '../../services/tmdb_search_movies_service/tmdb_search_movies_service.dart';
 import '../movie_details/movie_details_page.dart';
 
 part 'bone/movie_grid_tile.dart';
@@ -31,7 +31,7 @@ class _SearchMoviesPageState extends State<SearchMoviesPage> with AutomaticKeepA
   Widget build(BuildContext context) {
     super.build(context);
     return BlocProvider<SearchMoviesBloc>(
-      create: (context) => SearchMoviesBloc(client: Dio()),
+      create: (context) => SearchMoviesBloc(service: TMDBSearchMoviesService()),
       child: const SearchMoviesView(),
     );
   }
