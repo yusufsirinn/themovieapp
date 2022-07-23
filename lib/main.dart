@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:themovieapp/core/localization/tmdb_app_localizations.dart';
 
+import 'core/localization/tmdb_app_localizations.dart';
 import 'views/search_movies/search_movies_page.dart';
 
 void main() {

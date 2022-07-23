@@ -16,19 +16,20 @@ part 'movie_details_state.dart';
 
 class MovieDetailsBloc extends Bloc<MovieDetailsEvent, MovieDetailsState> {
   final Dio _client;
-  MovieDetailsBloc({required Dio client})
+  MovieDetailsBloc({required Dio client, required MovieDetails movie})
       : _client = client,
         super(
-          const MovieDetailsState(),
+          MovieDetailsState(movie: movie),
         ) {
     on<MovieDetailsFetched>(_onMovieDetailsFetched);
   }
 
   Future<void> _onMovieDetailsFetched(MovieDetailsFetched event, Emitter<MovieDetailsState> emit) async {
+    if (event.id == null) return;
     try {
       emit(state.copyWith(status: Status.loading));
-      final movieDetailsResponse = await _fetchhMovie(id: event.id);
-      emit(state.copyWith(status: Status.success, movie: movieDetailsResponse));
+      final movieDetailsResponse = await _fetchhMovie(id: event.id!);
+      emit(state.copyWith(status: Status.success, movie: state.movie?.setDetails(movieDetails: movieDetailsResponse)));
     } catch (e) {
       emit(state.copyWith(status: Status.failure));
     }

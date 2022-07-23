@@ -5,7 +5,7 @@ class MovieBackdrop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var movie = context.read<MovieDetailsBloc>().state.movie;
+    var movie = context.watch<MovieDetailsBloc>().state.movie;
     var size = MediaQuery.of(context).size;
 
     return Stack(

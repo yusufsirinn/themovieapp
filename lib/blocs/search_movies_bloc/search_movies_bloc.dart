@@ -49,10 +49,12 @@ class SearchMoviesBloc extends Bloc<SearchMoviesEvent, SearchMoviesState> {
       emit(state.copyWith(
           status: Status.success,
           movies: List.of(state.movies)..addAll(searchMoviesResponse.results ?? []),
-          hasMax: searchMoviesResponse.page == searchMoviesResponse.totalPages,
+          hasMax: _hasMax(page: searchMoviesResponse.page, totalPages: searchMoviesResponse.totalPages),
           page: searchMoviesResponse.page,
           totalPage: searchMoviesResponse.totalPages));
-    } catch (e) {}
+    } catch (e) {
+      emit(state.copyWith(status: Status.failure));
+    }
   }
 
   bool _hasMax({int? page, int? totalPages}) {
