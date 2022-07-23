@@ -23,6 +23,8 @@ dependencies:
   intl: ^0.17.0
 
 dev_dependencies:
+  integration_test:
+    sdk: flutter
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
