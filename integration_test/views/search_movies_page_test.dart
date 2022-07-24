@@ -6,7 +6,7 @@ import 'package:themovieapp/views/search_movies/search_movies_page.dart';
 
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
-  testWidgets('Search a car', (tester) async {
+  testWidgets('Car is searched and then cars 2 is found', (tester) async {
     app.main();
     await tester.pumpAndSettle();
     var searchTextField = find.byKey(const ValueKey(SearchMoviesTextField));
