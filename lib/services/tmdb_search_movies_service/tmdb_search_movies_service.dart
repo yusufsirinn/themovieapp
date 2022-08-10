@@ -33,7 +33,7 @@ class TMDBSearchMoviesService extends ITMDBSearchMoviesService {
     int page = 1,
   }) async {
     var queryParameters = {
-      'api_key': AppConstants.apiKey,
+      'api_key': Environment.apiKey,
       'page': '$page',
       'query': query,
     };

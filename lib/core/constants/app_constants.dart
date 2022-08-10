@@ -1,4 +1,9 @@
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+
 abstract class AppConstants {
-  static const apiKey = '35ef0461fc4557cf1d256d3335ed7545';
   static const baseURL = 'https://api.themoviedb.org/3';
+}
+
+abstract class Environment {
+  static String apiKey = dotenv.get('TMDB_API_KEY');
 }

@@ -21,6 +21,7 @@ dependencies:
   stream_transform: ^2.0.0
   async: ^2.8.2
   intl: ^0.17.0
+  flutter_dotenv: ^5.0.2
 
 dev_dependencies:
   integration_test:
@@ -35,3 +36,6 @@ flutter:
 
   uses-material-design: true
   generate: true
+
+  assets:
+  - .env

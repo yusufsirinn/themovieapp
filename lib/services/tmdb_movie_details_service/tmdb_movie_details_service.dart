@@ -35,7 +35,7 @@ class TMDBMovieDetailsService extends ITMDBMovieDetailsService {
     required Function onError,
   }) async {
     var queryParameters = {
-      'api_key': AppConstants.apiKey,
+      'api_key': Environment.apiKey,
     };
 
     await NetworkManager.instance?.fetch(

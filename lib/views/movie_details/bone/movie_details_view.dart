@@ -32,16 +32,14 @@ class _MovieDetailsViewState extends State<MovieDetailsView> {
                     const MoviePoster(),
                     SizedBox(width: AppSize.s.value()),
                     BlocBuilder<MovieDetailsBloc, MovieDetailsState>(builder: (context, state) {
-                      switch (state.status) {
-                        case Status.success:
-                          return const MovieOverview();
-                        case Status.failure:
-                          return Center(
-                            child: Text(AppLocalizations.of(context).somethingWentWrong),
-                          );
-                        default:
-                          return const Expanded(child: Indicator());
-                      }
+                      return ViewStateWidget(
+                        status: state.status,
+                        success: const MovieOverview(),
+                        failure: Center(
+                          child: Text(AppLocalizations.of(context).somethingWentWrong),
+                        ),
+                        loading: const Expanded(child: Indicator()),
+                      );
                     }),
                   ],
                 ),
