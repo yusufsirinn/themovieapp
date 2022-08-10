@@ -3,11 +3,9 @@ import '../../core/constants/app_constants.dart';
 import '../../core/enums/path_enum.dart';
 import '../../core/managers/network/network_service.dart';
 
-typedef SearchMoviesResponseFunc = Function(SearchMoviesResponseModel);
-
 abstract class ITMDBSearchMoviesService {
   Future<void> searchMovies({
-    required SearchMoviesResponseFunc onSuccess,
+    required Function(SearchMoviesResponseModel) onSuccess,
     required Function onError,
     required String query,
     int page = 1,
@@ -29,7 +27,7 @@ class TMDBSearchMoviesMockService extends ITMDBSearchMoviesService {
 class TMDBSearchMoviesService extends ITMDBSearchMoviesService {
   @override
   Future<void> searchMovies({
-    required SearchMoviesResponseFunc onSuccess,
+    required Function(SearchMoviesResponseModel) onSuccess,
     required Function onError,
     required String query,
     int page = 1,
