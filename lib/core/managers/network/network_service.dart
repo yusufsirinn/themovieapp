@@ -5,6 +5,8 @@ import 'package:dio/dio.dart';
 import '../../base/base_response_model.dart';
 import '../../constants/app_constants.dart';
 
+typedef NetworkSuccessCall<T extends BaseResponseModel> = Function(T);
+
 class NetworkManager {
   static NetworkManager? _instance;
   static NetworkManager? get instance {
@@ -19,8 +21,8 @@ class NetworkManager {
     _client = Dio(baseOptions);
   }
 
-  Future<void> fetch({
-    required Function onSuccess,
+  Future<void> fetch<T extends BaseResponseModel>({
+    required NetworkSuccessCall<T> onSuccess,
     required Function onError,
     required String path,
     required BaseResponseModel model,
@@ -34,7 +36,7 @@ class NetworkManager {
     try {
       var response = await _client.fetch(requestOptions);
       if (response.statusCode == HttpStatus.ok) {
-        var data = model.fromJson(response.data);
+        var data = model.fromJson(response.data) as T;
         onSuccess(data);
       } else {
         throw Exception(response.data);
