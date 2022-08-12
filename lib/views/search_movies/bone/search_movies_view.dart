@@ -52,16 +52,13 @@ class _SearchMoviesViewState extends State<SearchMoviesView> {
             ),
             BlocBuilder<SearchMoviesBloc, SearchMoviesState>(
               builder: (context, state) {
-                switch (state.status) {
-                  case Status.initial:
-                    return SearchMoviesInfoText(text: AppLocalizations.of(context).searchMovie);
-                  case Status.failure:
-                    return SearchMoviesInfoText(text: AppLocalizations.of(context).somethingWentWrong);
-                  case Status.success:
-                    return MoviesGridView(scrollController: _scrollController);
-                  default:
-                    return const Expanded(child: Indicator());
-                }
+                return ViewStateWidget(
+                  status: state.status,
+                  initial: SearchMoviesInfoText(text: AppLocalizations.of(context).searchMovie),
+                  loading: const Expanded(child: Indicator()),
+                  success: MoviesGridView(scrollController: _scrollController),
+                  failure: SearchMoviesInfoText(text: AppLocalizations.of(context).somethingWentWrong),
+                );
               },
             ),
           ],

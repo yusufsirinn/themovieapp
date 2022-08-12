@@ -1,9 +1,14 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 
 import '../../base/base_response_model.dart';
 import '../../constants/app_constants.dart';
+import 'interceptors/api_key_intercepter.dart';
+import 'interceptors/app_log_interceptor.dart';
+
+typedef NetworkSuccessCall<T extends BaseResponseModel> = Function(T);
 
 class NetworkManager {
   static NetworkManager? _instance;
@@ -17,10 +22,16 @@ class NetworkManager {
   NetworkManager._init() {
     final baseOptions = BaseOptions(baseUrl: AppConstants.baseURL);
     _client = Dio(baseOptions);
+    _client.interceptors.addAll(
+      [
+        if (kDebugMode) AppLogInterceptor(),
+        ApiKeyInterceptor(),
+      ],
+    );
   }
 
-  Future<void> fetch({
-    required Function onSuccess,
+  Future<void> fetch<T extends BaseResponseModel>({
+    required NetworkSuccessCall<T> onSuccess,
     required Function onError,
     required String path,
     required BaseResponseModel model,
@@ -34,7 +45,7 @@ class NetworkManager {
     try {
       var response = await _client.fetch(requestOptions);
       if (response.statusCode == HttpStatus.ok) {
-        var data = model.fromJson(response.data);
+        var data = model.fromJson(response.data) as T;
         onSuccess(data);
       } else {
         throw Exception(response.data);

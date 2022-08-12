@@ -167,6 +167,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "8.0.1"
+  flutter_dotenv:
+    dependency: "direct main"
+    description:
+      name: flutter_dotenv
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "5.0.2"
   flutter_driver:
     dependency: transitive
     description: flutter
@@ -291,7 +298,7 @@ packages:
     source: hosted
     version: "1.0.2"
   mocktail:
-    dependency: transitive
+    dependency: "direct dev"
     description:
       name: mocktail
       url: "https://pub.dartlang.org"

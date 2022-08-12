@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 import 'core/localization/tmdb_app_localizations.dart';
 import 'views/search_movies/search_movies_page.dart';
 
-void main() {
-  runApp(const MyApp());
+Future<void> main() async {
+  await dotenv.load(fileName: '.env');
+  runApp(const TMDBApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class TMDBApp extends StatelessWidget {
+  const TMDBApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

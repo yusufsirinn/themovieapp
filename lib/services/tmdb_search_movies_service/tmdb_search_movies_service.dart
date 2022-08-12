@@ -1,11 +1,10 @@
 import '../../../models/search_movies_response_model.dart';
-import '../../core/constants/app_constants.dart';
 import '../../core/enums/path_enum.dart';
 import '../../core/managers/network/network_service.dart';
 
 abstract class ITMDBSearchMoviesService {
   Future<void> searchMovies({
-    required Function onSuccess,
+    required Function(SearchMoviesResponseModel) onSuccess,
     required Function onError,
     required String query,
     int page = 1,
@@ -27,18 +26,17 @@ class TMDBSearchMoviesMockService extends ITMDBSearchMoviesService {
 class TMDBSearchMoviesService extends ITMDBSearchMoviesService {
   @override
   Future<void> searchMovies({
-    required Function onSuccess,
+    required Function(SearchMoviesResponseModel) onSuccess,
     required Function onError,
     required String query,
     int page = 1,
   }) async {
     var queryParameters = {
-      'api_key': AppConstants.apiKey,
       'page': '$page',
       'query': query,
     };
 
-    await NetworkManager.instance?.fetch(
+    await NetworkManager.instance?.fetch<SearchMoviesResponseModel>(
       model: SearchMoviesResponseModel(),
       onSuccess: onSuccess,
       onError: onError,
