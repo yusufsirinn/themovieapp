@@ -1,11 +1,9 @@
-import 'package:themovieapp/core/managers/network/models/response.dart';
-
 import '../../../models/search_movies_response_model.dart';
 import '../../core/enums/path_enum.dart';
 import '../../core/managers/network/network_service.dart';
 
 abstract class ITMDBSearchMoviesService {
-  Future<Response<SearchMoviesResponseModel>> searchMovies({
+  FutureResponse<SearchMoviesResponseModel> searchMovies({
     required String query,
     int page = 1,
   });
@@ -13,7 +11,7 @@ abstract class ITMDBSearchMoviesService {
 
 class TMDBSearchMoviesMockService extends ITMDBSearchMoviesService {
   @override
-  Future<Response<SearchMoviesResponseModel>> searchMovies({required String query, int page = 1}) async {
+  FutureResponse<SearchMoviesResponseModel> searchMovies({required String query, int page = 1}) async {
     if (query.length >= 2) {
     } else {}
     throw Exception();
@@ -22,7 +20,7 @@ class TMDBSearchMoviesMockService extends ITMDBSearchMoviesService {
 
 class TMDBSearchMoviesService extends ITMDBSearchMoviesService {
   @override
-  Future<Response<SearchMoviesResponseModel>> searchMovies({
+  FutureResponse<SearchMoviesResponseModel> searchMovies({
     required String query,
     int page = 1,
   }) async {

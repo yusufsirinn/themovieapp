@@ -2,15 +2,15 @@ import 'dart:io';
 
 import 'package:dio/dio.dart' hide Response;
 import 'package:flutter/foundation.dart';
-import 'package:themovieapp/core/managers/network/models/error.dart';
 
 import '../../base/base_response_model.dart';
 import '../../constants/app_constants.dart';
 import 'interceptors/api_key_intercepter.dart';
 import 'interceptors/app_log_interceptor.dart';
+import 'models/error.dart';
 import 'models/response.dart';
 
-typedef NetworkSuccessCall<T extends BaseResponseModel> = Function(T);
+typedef FutureResponse<T extends BaseResponseModel> = Future<Response<T>>;
 
 class NetworkManager {
   static NetworkManager? _instance;
@@ -32,7 +32,7 @@ class NetworkManager {
     );
   }
 
-  Future<Response<T>> fetch<T extends BaseResponseModel>({
+  FutureResponse<T> fetch<T extends BaseResponseModel>({
     required String path,
     required BaseResponseModel model,
     Map<String, dynamic>? queryParameters,
