@@ -1,5 +1,4 @@
 import '../../../models/search_movies_response_model.dart';
-import '../../core/constants/app_constants.dart';
 import '../../core/enums/path_enum.dart';
 import '../../core/managers/network/network_service.dart';
 
@@ -33,7 +32,6 @@ class TMDBSearchMoviesService extends ITMDBSearchMoviesService {
     int page = 1,
   }) async {
     var queryParameters = {
-      'api_key': Environment.apiKey,
       'page': '$page',
       'query': query,
     };

@@ -1,5 +1,4 @@
 import '../../../models/movie_details_model.dart';
-import '../../core/constants/app_constants.dart';
 import '../../core/enums/path_enum.dart';
 import '../../core/managers/network/network_service.dart';
 
@@ -33,15 +32,10 @@ class TMDBMovieDetailsService extends ITMDBMovieDetailsService {
     required Function(MovieDetails) onSuccess,
     required Function onError,
   }) async {
-    var queryParameters = {
-      'api_key': Environment.apiKey,
-    };
-
     await NetworkManager.instance?.fetch<MovieDetails>(
       model: MovieDetails(),
       onSuccess: onSuccess,
       onError: onError,
-      queryParameters: queryParameters,
       path: Path.movie.withId(id),
     );
   }
