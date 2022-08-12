@@ -1,3 +1,3 @@
-abstract class BaseResponseModel<T> {
-  T fromJson(Map<String, dynamic> json);
+abstract class BaseResponseModel {
+  fromJson(Map<String, dynamic> json);
 }

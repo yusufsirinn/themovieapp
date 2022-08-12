@@ -15,10 +15,6 @@ void main() {
     SearchMoviesResponseModel? response;
     await service.searchMovies(
       query: 'car',
-      onSuccess: (res) {
-        response = res;
-      },
-      onError: () {},
     );
     expect(response, isNotNull);
   });
@@ -28,10 +24,6 @@ void main() {
     await service.searchMovies(
       query: 'car',
       page: 2,
-      onSuccess: (res) {
-        response = res;
-      },
-      onError: () {},
     );
     expect(response?.page, 2);
   });

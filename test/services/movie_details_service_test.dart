@@ -16,10 +16,6 @@ void main() {
     var fetchedId = 222;
     await service.fetchMovieDetails(
       id: fetchedId,
-      onSuccess: (res) {
-        response = res;
-      },
-      onError: () {},
     );
     expect(response, isNotNull);
     expect(response?.id, fetchedId);
