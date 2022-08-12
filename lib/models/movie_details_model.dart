@@ -18,6 +18,7 @@ class MovieDetails extends Movie {
 
   @override
   MovieDetails fromJson(Map<String, dynamic> json) {
+    super.fromJson(json);
     id = json['id'];
     backdropPath = json['backdrop_path'];
     if (json['genres'] != null) {
