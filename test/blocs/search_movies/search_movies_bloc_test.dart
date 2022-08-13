@@ -8,7 +8,7 @@ import 'package:themovieapp/core/managers/network/models/response.dart';
 import 'package:themovieapp/models/search_movies_response_model.dart';
 import 'package:themovieapp/services/tmdb_search_movies_service/tmdb_search_movies_service.dart';
 
-import '../../mock/mock_services.dart';
+import '../../test_utils/mock_services.dart';
 
 void main() {
   group('SearchMoviesBloc', () {
