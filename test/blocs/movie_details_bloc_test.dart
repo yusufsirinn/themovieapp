@@ -11,7 +11,7 @@ import 'package:themovieapp/services/tmdb_movie_details_service/tmdb_movie_detai
 import '../mock/mock_services.dart';
 
 void main() {
-  group('SearchMoviesBloc', () {
+  group('MovieDetailsBloc', () {
     var state = const MovieDetailsState();
     late ITMDBMovieDetailsService service;
 

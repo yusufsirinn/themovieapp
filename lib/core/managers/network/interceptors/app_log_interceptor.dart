@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:themovieapp/core/utils/logger.dart';
+
+import '../../../utils/logger.dart';
 
 class AppLogInterceptor extends Interceptor {
   @override

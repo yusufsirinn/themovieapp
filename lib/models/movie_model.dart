@@ -1,5 +1,5 @@
-import 'package:themovieapp/core/base/base_response_model.dart';
-import 'package:themovieapp/models/movie_details_model.dart';
+import '../core/base/base_response_model.dart';
+import 'movie_details_model.dart';
 
 class Movie extends BaseResponseModel {
   int? id;

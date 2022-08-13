@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:themovieapp/core/enums/size_enum.dart';
+import '../../core/enums/size_enum.dart';
 
 class TMDBImage extends StatelessWidget {
   final String? path;

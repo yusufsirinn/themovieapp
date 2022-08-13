@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:themovieapp/core/enums/size_enum.dart';
+import '../../core/enums/size_enum.dart';
 
 class Indicator extends StatelessWidget {
   const Indicator({Key? key}) : super(key: key);
