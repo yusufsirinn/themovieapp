@@ -1,4 +1,4 @@
-import 'package:themovieapp/core/base/base_response_model.dart';
+import '../../../base/base_response_model.dart';
 
 import 'error.dart';
 

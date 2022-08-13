@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
-import 'package:themovieapp/services/tmdb_movie_details_service/tmdb_movie_details_service.dart';
+import '../../services/tmdb_movie_details_service/tmdb_movie_details_service.dart';
 
 import '../../core/base/base_state.dart';
 import '../../core/enums/status_enum.dart';
