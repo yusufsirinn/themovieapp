@@ -8,7 +8,7 @@ import 'package:themovieapp/core/managers/network/models/response.dart';
 import 'package:themovieapp/models/search_movies_response_model.dart';
 import 'package:themovieapp/services/tmdb_search_movies_service/tmdb_search_movies_service.dart';
 
-import '../mock/mock_services.dart';
+import '../../test_utils/mock_services.dart';
 
 void main() {
   group('SearchMoviesBloc', () {
@@ -39,6 +39,9 @@ void main() {
         state.copyWith(status: Status.loading, query: 'car'),
         state.copyWith(status: Status.success, query: 'car', page: 1),
       ],
+      verify: ((bloc) {
+        verify(() => service.searchMovies(query: 'car')).called(1);
+      }),
     );
 
     blocTest<SearchMoviesBloc, SearchMoviesState>(
@@ -55,6 +58,9 @@ void main() {
         state.copyWith(status: Status.loading, query: ''),
         state.copyWith(status: Status.failure, query: ''),
       ],
+      verify: ((bloc) {
+        verify(() => service.searchMovies(query: any(named: 'query'), page: any(named: 'page'))).called(1);
+      }),
     );
   });
 }

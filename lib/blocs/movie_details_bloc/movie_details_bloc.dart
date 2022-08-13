@@ -13,9 +13,7 @@ class MovieDetailsBloc extends Bloc<MovieDetailsEvent, MovieDetailsState> {
   final ITMDBMovieDetailsService _service;
   MovieDetailsBloc({required ITMDBMovieDetailsService service, required MovieDetails movie})
       : _service = service,
-        super(
-          MovieDetailsState(movie: movie),
-        ) {
+        super(MovieDetailsState(movie: movie)) {
     on<MovieDetailsFetched>(_onMovieDetailsFetched);
   }
 
