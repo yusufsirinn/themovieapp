@@ -1,23 +1,26 @@
-import 'dart:io';
-
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mocktail/mocktail.dart';
+import 'package:themovieapp/core/managers/network/models/response.dart';
 import 'package:themovieapp/models/movie_details_model.dart';
 import 'package:themovieapp/services/tmdb_movie_details_service/tmdb_movie_details_service.dart';
 
+import '../mock/mock_services.dart';
+
 void main() {
-  late TMDBMovieDetailsService service;
+  var fetchedId = 222;
+  late ITMDBMovieDetailsService service;
   setUp(() {
-    dotenv.testLoad(fileInput: File('.env').readAsStringSync());
-    service = TMDBMovieDetailsService();
+    service = TMDBMovieDetailsMockService();
   });
   test('Fetch movie wiht id', () async {
-    MovieDetails? response;
-    var fetchedId = 222;
-    await service.fetchMovieDetails(
+    var mockData = Response<MovieDetails>(response: MovieDetails(id: fetchedId));
+    when(() => service.fetchMovieDetails(id: fetchedId)).thenAnswer(
+      (_) async => mockData,
+    );
+    Response<MovieDetails>? data = await service.fetchMovieDetails(
       id: fetchedId,
     );
-    expect(response, isNotNull);
-    expect(response?.id, fetchedId);
+    expect(data, isNotNull);
+    expect(data.response?.id, fetchedId);
   });
 }
