@@ -1,20 +1,22 @@
 import 'dart:io';
 
-import 'package:dio/dio.dart';
+import 'package:dio/dio.dart' hide Response;
 import 'package:flutter/foundation.dart';
 
 import '../../base/base_response_model.dart';
 import '../../constants/app_constants.dart';
 import 'interceptors/api_key_intercepter.dart';
 import 'interceptors/app_log_interceptor.dart';
+import 'models/error.dart';
+import 'models/response.dart';
 
-typedef NetworkSuccessCall<T extends BaseResponseModel> = Function(T);
+typedef FutureResponse<T extends BaseResponseModel> = Future<Response<T>>;
 
 class NetworkManager {
   static NetworkManager? _instance;
-  static NetworkManager? get instance {
+  static NetworkManager get instance {
     _instance ??= NetworkManager._init();
-    return _instance;
+    return _instance!;
   }
 
   late Dio _client;
@@ -30,9 +32,7 @@ class NetworkManager {
     );
   }
 
-  Future<void> fetch<T extends BaseResponseModel>({
-    required NetworkSuccessCall<T> onSuccess,
-    required Function onError,
+  FutureResponse<T> fetch<T extends BaseResponseModel>({
     required String path,
     required BaseResponseModel model,
     Map<String, dynamic>? queryParameters,
@@ -46,12 +46,12 @@ class NetworkManager {
       var response = await _client.fetch(requestOptions);
       if (response.statusCode == HttpStatus.ok) {
         var data = model.fromJson(response.data) as T;
-        onSuccess(data);
+        return Response<T>(response: data);
       } else {
         throw Exception(response.data);
       }
     } catch (e) {
-      onError(e);
+      return Response(error: Error(message: e.toString()));
     }
   }
 }

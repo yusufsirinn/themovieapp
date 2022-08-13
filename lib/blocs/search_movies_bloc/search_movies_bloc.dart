@@ -25,29 +25,29 @@ class SearchMoviesBloc extends Bloc<SearchMoviesEvent, SearchMoviesState> {
   Future<void> _onSearchMovies(SearchMovies event, Emitter<SearchMoviesState> emit) async {
     emit(state.copyWith(query: event.query, status: Status.loading));
     var searchMoviesEmitter = SearchMoviesEmitter(emit, state);
-    await _service.searchMovies(
+    var data = await _service.searchMovies(
       query: state.query,
-      onSuccess: (searchMoviesResponse) {
-        searchMoviesEmitter.emitSuccess(searchMoviesResponse);
-      },
-      onError: (e) {
-        searchMoviesEmitter.emitFailure();
-      },
     );
+
+    if (data.response != null) {
+      searchMoviesEmitter.emitSuccess(data.response!);
+    } else {
+      searchMoviesEmitter.emitFailure();
+    }
   }
 
   Future<void> _onMoreMovies(MoreMovies event, Emitter<SearchMoviesState> emit) async {
     if (state.hasMax) return;
     var moreMoviesEmitter = MoreMoviesEmitter(emit, state);
-    await _service.searchMovies(
+    var data = await _service.searchMovies(
       query: state.query,
       page: state.page + 1,
-      onSuccess: (searchMoviesResponse) {
-        moreMoviesEmitter.emitSuccess(searchMoviesResponse);
-      },
-      onError: (e) {
-        moreMoviesEmitter.emitFailure();
-      },
     );
+
+    if (data.response != null) {
+      moreMoviesEmitter.emitSuccess(data.response!);
+    } else {
+      moreMoviesEmitter.emitFailure();
+    }
   }
 }

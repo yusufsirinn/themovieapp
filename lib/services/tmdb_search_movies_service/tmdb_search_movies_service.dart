@@ -3,9 +3,7 @@ import '../../core/enums/path_enum.dart';
 import '../../core/managers/network/network_service.dart';
 
 abstract class ITMDBSearchMoviesService {
-  Future<void> searchMovies({
-    required Function(SearchMoviesResponseModel) onSuccess,
-    required Function onError,
+  FutureResponse<SearchMoviesResponseModel> searchMovies({
     required String query,
     int page = 1,
   });
@@ -13,21 +11,16 @@ abstract class ITMDBSearchMoviesService {
 
 class TMDBSearchMoviesMockService extends ITMDBSearchMoviesService {
   @override
-  Future<void> searchMovies(
-      {required Function onSuccess, required Function onError, required String query, int page = 1}) async {
+  FutureResponse<SearchMoviesResponseModel> searchMovies({required String query, int page = 1}) async {
     if (query.length >= 2) {
-      onSuccess(SearchMoviesResponseModel(page: 1, results: [], totalPages: 0, totalResults: 0));
-    } else {
-      onError('Error');
-    }
+    } else {}
+    throw Exception();
   }
 }
 
 class TMDBSearchMoviesService extends ITMDBSearchMoviesService {
   @override
-  Future<void> searchMovies({
-    required Function(SearchMoviesResponseModel) onSuccess,
-    required Function onError,
+  FutureResponse<SearchMoviesResponseModel> searchMovies({
     required String query,
     int page = 1,
   }) async {
@@ -36,10 +29,8 @@ class TMDBSearchMoviesService extends ITMDBSearchMoviesService {
       'query': query,
     };
 
-    await NetworkManager.instance?.fetch<SearchMoviesResponseModel>(
+    return await NetworkManager.instance.fetch(
       model: SearchMoviesResponseModel(),
-      onSuccess: onSuccess,
-      onError: onError,
       queryParameters: queryParameters,
       path: Path.searchMovie.value(),
     );
