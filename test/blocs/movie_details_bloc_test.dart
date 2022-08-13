@@ -39,6 +39,9 @@ void main() {
         state.copyWith(status: Status.loading, movie: MovieDetails(id: 22)),
         state.copyWith(status: Status.success, movie: MovieDetails(id: 22, title: 'Car')),
       ],
+      verify: ((bloc) {
+        verify(() => service.fetchMovieDetails(id: 22)).called(1);
+      }),
     );
 
     blocTest<MovieDetailsBloc, MovieDetailsState>(
@@ -55,6 +58,9 @@ void main() {
         state.copyWith(status: Status.loading, movie: MovieDetails(id: 1)),
         state.copyWith(status: Status.failure, movie: MovieDetails(id: 1)),
       ],
+      verify: ((bloc) {
+        verify(() => service.fetchMovieDetails(id: 1)).called(1);
+      }),
     );
   });
 }

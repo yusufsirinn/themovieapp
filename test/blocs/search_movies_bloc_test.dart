@@ -39,6 +39,9 @@ void main() {
         state.copyWith(status: Status.loading, query: 'car'),
         state.copyWith(status: Status.success, query: 'car', page: 1),
       ],
+      verify: ((bloc) {
+        verify(() => service.searchMovies(query: 'car')).called(1);
+      }),
     );
 
     blocTest<SearchMoviesBloc, SearchMoviesState>(
@@ -55,6 +58,9 @@ void main() {
         state.copyWith(status: Status.loading, query: ''),
         state.copyWith(status: Status.failure, query: ''),
       ],
+      verify: ((bloc) {
+        verify(() => service.searchMovies(query: any(named: 'query'), page: any(named: 'page'))).called(1);
+      }),
     );
   });
 }
