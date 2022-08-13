@@ -3,31 +3,13 @@ import '../../core/enums/path_enum.dart';
 import '../../core/managers/network/network_service.dart';
 
 abstract class ITMDBSearchMoviesService {
-  FutureResponse<SearchMoviesResponseModel> searchMovies({
-    required String query,
-    int page = 1,
-  });
-}
-
-class TMDBSearchMoviesMockService extends ITMDBSearchMoviesService {
-  @override
-  FutureResponse<SearchMoviesResponseModel> searchMovies({required String query, int page = 1}) async {
-    if (query.length >= 2) {
-    } else {}
-    throw Exception();
-  }
+  FutureResponse<SearchMoviesResponseModel> searchMovies({required String query, int page = 1});
 }
 
 class TMDBSearchMoviesService extends ITMDBSearchMoviesService {
   @override
-  FutureResponse<SearchMoviesResponseModel> searchMovies({
-    required String query,
-    int page = 1,
-  }) async {
-    var queryParameters = {
-      'page': '$page',
-      'query': query,
-    };
+  FutureResponse<SearchMoviesResponseModel> searchMovies({required String query, int page = 1}) async {
+    var queryParameters = {'page': '$page', 'query': query};
 
     return await NetworkManager.instance.fetch(
       model: SearchMoviesResponseModel(),

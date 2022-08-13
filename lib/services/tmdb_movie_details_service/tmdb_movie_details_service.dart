@@ -8,18 +8,9 @@ abstract class ITMDBMovieDetailsService {
   });
 }
 
-class ITMDBMovieDetailsMockService extends ITMDBMovieDetailsService {
-  @override
-  FutureResponse<MovieDetails> fetchMovieDetails({required int id}) async {
-    throw Exception();
-  }
-}
-
 class TMDBMovieDetailsService extends ITMDBMovieDetailsService {
   @override
-  FutureResponse<MovieDetails> fetchMovieDetails({
-    required int id,
-  }) async {
+  FutureResponse<MovieDetails> fetchMovieDetails({required int id}) async {
     return await NetworkManager.instance.fetch<MovieDetails>(
       model: MovieDetails(),
       path: Path.movie.withId(id),

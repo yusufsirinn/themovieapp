@@ -23,19 +23,17 @@ class MovieDetailsBloc extends Bloc<MovieDetailsEvent, MovieDetailsState> {
   Future<void> _onMovieDetailsFetched(MovieDetailsFetched event, Emitter<MovieDetailsState> emit) async {
     if (event.id == null) return;
     emit(state.copyWith(status: Status.loading));
-    var data = await _service.fetchMovieDetails(
-      id: event.id!,
-    );
+    var response = await _service.fetchMovieDetails(id: event.id!);
 
-    if (data.response != null) {
+    response.data(onSucces: (movieDetails) {
       emit(
         state.copyWith(
           status: Status.success,
-          movie: state.movie?.setDetails(movieDetails: data.response!),
+          movie: state.movie?.setDetails(movieDetails: movieDetails),
         ),
       );
-    } else {
+    }, onError: (err) {
       emit(state.copyWith(status: Status.failure));
-    }
+    });
   }
 }

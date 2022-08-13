@@ -1,30 +1,36 @@
-import 'dart:io';
-
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mocktail/mocktail.dart';
+import 'package:themovieapp/core/managers/network/models/response.dart';
 import 'package:themovieapp/models/search_movies_response_model.dart';
 import 'package:themovieapp/services/tmdb_search_movies_service/tmdb_search_movies_service.dart';
+
+import '../mock/mock_services.dart';
 
 void main() {
   late ITMDBSearchMoviesService service;
   setUp(() {
-    dotenv.testLoad(fileInput: File('.env').readAsStringSync());
-    service = TMDBSearchMoviesService();
+    service = ITMDBSearchMoviesMockService();
   });
   test('Fetch car movies', () async {
-    SearchMoviesResponseModel? response;
-    await service.searchMovies(
+    var mockData = Response<SearchMoviesResponseModel>(response: SearchMoviesResponseModel());
+    when(() => service.searchMovies(query: any(named: 'query'))).thenAnswer(
+      (_) async => mockData,
+    );
+    Response<SearchMoviesResponseModel>? data = await service.searchMovies(
       query: 'car',
     );
-    expect(response, isNotNull);
+    expect(data.response, isNotNull);
   });
 
   test('Fetch car movies, page 2', () async {
-    SearchMoviesResponseModel? response;
-    await service.searchMovies(
-      query: 'car',
-      page: 2,
+    var mockData = Response<SearchMoviesResponseModel>(response: SearchMoviesResponseModel(page: 2));
+    when(() => service.searchMovies(query: any(named: 'query'), page: any(named: 'page'))).thenAnswer(
+      (_) async => mockData,
     );
-    expect(response?.page, 2);
+    Response<SearchMoviesResponseModel>? data = await service.searchMovies(
+      query: 'car',
+    );
+    expect(data.response, isNotNull);
+    expect(data.response?.page, 2);
   });
 }

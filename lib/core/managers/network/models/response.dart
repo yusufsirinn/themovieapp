@@ -10,6 +10,17 @@ abstract class IResponse<T extends BaseResponseModel> {
     this.response,
     this.error,
   });
+
+  void data({
+    required Function(T) onSucces,
+    required Function(IError) onError,
+  }) {
+    if (response != null) {
+      onSucces(response!);
+    } else {
+      onError(error!);
+    }
+  }
 }
 
 class Response<T extends BaseResponseModel> extends IResponse<T> {
