@@ -8,7 +8,7 @@ import 'package:themovieapp/core/managers/network/models/response.dart';
 import 'package:themovieapp/models/movie_details_model.dart';
 import 'package:themovieapp/services/tmdb_movie_details_service/tmdb_movie_details_service.dart';
 
-import '../mock/mock_services.dart';
+import '../../mock/mock_services.dart';
 
 void main() {
   group('MovieDetailsBloc', () {
