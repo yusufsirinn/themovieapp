@@ -4,8 +4,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../blocs/search_movies_bloc/search_movies_bloc.dart';
 import '../../core/core.dart';
-import '../../desing_system/atoms/indicator.dart';
-import '../../desing_system/atoms/tmdb_image.dart';
+import '../../desing_system/desing_system.dart';
 import '../../models/movie_model.dart';
 import '../../services/tmdb_search_movies_service/tmdb_search_movies_service.dart';
 import '../movie_details/movie_details_page.dart';

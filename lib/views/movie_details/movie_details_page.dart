@@ -4,8 +4,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../blocs/movie_details_bloc/movie_details_bloc.dart';
 import '../../core/core.dart';
-import '../../desing_system/atoms/indicator.dart';
-import '../../desing_system/atoms/tmdb_image.dart';
+import '../../desing_system/desing_system.dart';
 import '../../models/movie_details_model.dart';
 import '../../services/tmdb_movie_details_service/tmdb_movie_details_service.dart';
 
