@@ -3,9 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../blocs/movie_details_bloc/movie_details_bloc.dart';
-import '../../core/enums/padding_enum.dart';
-import '../../core/enums/size_enum.dart';
-import '../../core/utils/view_state_widget.dart';
+import '../../core/core.dart';
 import '../../desing_system/atoms/indicator.dart';
 import '../../desing_system/atoms/tmdb_image.dart';
 import '../../models/movie_details_model.dart';

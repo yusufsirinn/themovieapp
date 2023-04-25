@@ -1,6 +1,5 @@
 import '../../../models/movie_details_model.dart';
-import '../../core/enums/path_enum.dart';
-import '../../core/managers/network/network_service.dart';
+import '../../core/core.dart';
 
 abstract class ITMDBMovieDetailsService {
   FutureResponse<MovieDetails> fetchMovieDetails({

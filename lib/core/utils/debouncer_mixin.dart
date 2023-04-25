@@ -1,6 +1,6 @@
 import 'package:async/async.dart';
 
-import '../enums/duration_enum.dart';
+import '../core.dart';
 
 mixin DebounceMixin {
   CancelableOperation<void>? _cancelableOperation;

@@ -1,6 +1,5 @@
 import '../../../models/search_movies_response_model.dart';
-import '../../core/enums/path_enum.dart';
-import '../../core/managers/network/network_service.dart';
+import '../../core/core.dart';
 
 abstract class ITMDBSearchMoviesService {
   FutureResponse<SearchMoviesResponseModel> searchMovies({required String query, int page = 1});

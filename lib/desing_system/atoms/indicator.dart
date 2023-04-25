@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../core/enums/size_enum.dart';
+
+import '../../core/core.dart';
 
 class Indicator extends StatelessWidget {
   const Indicator({Key? key}) : super(key: key);

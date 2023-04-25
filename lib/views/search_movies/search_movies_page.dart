@@ -3,10 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../blocs/search_movies_bloc/search_movies_bloc.dart';
-import '../../core/enums/padding_enum.dart';
-import '../../core/extensions/scroll_controller_extensions.dart';
-import '../../core/utils/debouncer_mixin.dart';
-import '../../core/utils/view_state_widget.dart';
+import '../../core/core.dart';
 import '../../desing_system/atoms/indicator.dart';
 import '../../desing_system/atoms/tmdb_image.dart';
 import '../../models/movie_model.dart';

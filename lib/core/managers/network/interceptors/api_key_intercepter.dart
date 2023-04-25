@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
-import '../../../constants/app_constants.dart';
+
+import '../../../core.dart';
 
 class ApiKeyInterceptor extends Interceptor {
   @override

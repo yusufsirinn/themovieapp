@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../enums/status_enum.dart';
+
+import '../core.dart';
 
 class ViewStateWidget extends StatelessWidget {
   final Status status;

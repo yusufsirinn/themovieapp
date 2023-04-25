@@ -1,4 +1,4 @@
-import '../core/base/base_response_model.dart';
+import '../core/core.dart';
 import 'movie_details_model.dart';
 
 class Movie extends BaseResponseModel {

@@ -3,12 +3,7 @@ import 'dart:io';
 import 'package:dio/dio.dart' hide Response;
 import 'package:flutter/foundation.dart';
 
-import '../../base/base_response_model.dart';
-import '../../constants/app_constants.dart';
-import 'interceptors/api_key_intercepter.dart';
-import 'interceptors/app_log_interceptor.dart';
-import 'models/error.dart';
-import 'models/response.dart';
+import '../../core.dart';
 
 typedef FutureResponse<T extends BaseResponseModel> = Future<Response<T>>;
 
