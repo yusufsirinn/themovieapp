@@ -34,11 +34,11 @@ class MovieGridTile extends StatelessWidget {
                   children: [
                     Text(
                       movie.voteAverage.toString(),
-                      style: textTheme.headline6?.copyWith(color: Colors.white),
+                      style: textTheme.labelLarge?.copyWith(color: Colors.white),
                     ),
                     Text(
                       movie.title.toString(),
-                      style: textTheme.caption?.copyWith(color: Colors.white),
+                      style: textTheme.bodyMedium?.copyWith(color: Colors.white),
                     ),
                   ],
                 ),

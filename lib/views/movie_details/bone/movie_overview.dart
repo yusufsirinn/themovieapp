@@ -28,7 +28,7 @@ class MovieOverview extends StatelessWidget {
                   SizedBox(width: AppSize.s.value()),
                   Text(
                     genre.name ?? '',
-                    style: Theme.of(context).textTheme.caption?.copyWith(color: Colors.white),
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: Colors.white),
                   )
                 ],
               )
