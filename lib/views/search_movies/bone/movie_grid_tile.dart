@@ -6,7 +6,7 @@ class MovieGridTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var textTheme = Theme.of(context).textTheme;
+    var textTheme = context.theme.textTheme;
     return GestureDetector(
       onTap: () {
         Navigator.push(
@@ -24,7 +24,7 @@ class MovieGridTile extends StatelessWidget {
             Positioned.fill(child: TMDBImage(path: movie.posterPath)),
             Container(
               color: Colors.black45,
-              padding: AppPadding.medium.value(),
+              padding: AppPadding.medium.all,
               child: SizedBox(
                 width: double.infinity,
                 child: Column(

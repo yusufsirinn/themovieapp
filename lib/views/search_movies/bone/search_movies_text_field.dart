@@ -14,12 +14,12 @@ class _SearchMoviesTextFieldState extends State<SearchMoviesTextField> with Debo
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: AppPadding.large.value(),
+      padding: AppPadding.large.all,
       child: TextField(
         key: const ValueKey(SearchMoviesTextField),
         cursorColor: Colors.grey,
         decoration: InputDecoration(
-          hintText: AppLocalizations.of(context).query,
+          hintText: context.tr.query,
           focusColor: Colors.grey,
           focusedBorder: _border(),
           border: _border(),

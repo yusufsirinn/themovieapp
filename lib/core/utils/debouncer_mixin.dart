@@ -8,7 +8,7 @@ mixin DebounceMixin {
   Future<void> debounce(Function action) async {
     _cancelableOperation?.cancel();
     _cancelableOperation = CancelableOperation.fromFuture(
-      Future.delayed(AppDuration.low.value()),
+      Future.delayed(AppDuration.low.value),
     );
 
     await _cancelableOperation?.value.then((result) async {

@@ -7,7 +7,7 @@ class MoviePoster extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
+    var size = context.msize;
     var movie = context.read<MovieDetailsBloc>().state.movie;
     return SizedBox(
       width: size.width * .3,
@@ -18,9 +18,9 @@ class MoviePoster extends StatelessWidget {
           children: [
             TMDBImage(path: movie?.posterPath),
             Container(
-              margin: AppPadding.large.value(),
-              width: AppSize.xxl.value(),
-              height: AppSize.xxl.value(),
+              margin: AppPadding.large.all,
+              width: AppSize.xxl.value,
+              height: AppSize.xxl.value,
               decoration: BoxDecoration(
                 color: Colors.white,
                 border: Border.all(

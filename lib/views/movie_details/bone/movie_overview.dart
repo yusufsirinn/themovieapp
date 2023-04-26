@@ -16,19 +16,19 @@ class MovieOverview extends StatelessWidget {
               movie?.overview ?? '',
               style: const TextStyle(color: Colors.white),
             ),
-            SizedBox(height: AppSize.m.value()),
+            SizedBox(height: AppSize.m.value),
             for (var genre in movie?.genres ?? [])
               Row(
                 children: [
                   Icon(
                     Icons.brightness_1,
                     color: Colors.white,
-                    size: AppSize.s.value(),
+                    size: AppSize.s.value,
                   ),
-                  SizedBox(width: AppSize.s.value()),
+                  SizedBox(width: AppSize.s.value),
                   Text(
                     genre.name ?? '',
-                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: Colors.white),
+                    style: context.theme.textTheme.bodyMedium?.copyWith(color: Colors.white),
                   )
                 ],
               )

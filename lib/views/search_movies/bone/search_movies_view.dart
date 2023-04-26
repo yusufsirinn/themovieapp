@@ -54,10 +54,10 @@ class _SearchMoviesViewState extends State<SearchMoviesView> {
               builder: (context, state) {
                 return ViewStateWidget(
                   status: state.status,
-                  initial: SearchMoviesInfoText(text: AppLocalizations.of(context).searchMovie),
+                  initial: SearchMoviesInfoText(text: context.tr.searchMovie),
                   loading: const Expanded(child: Indicator()),
                   success: MoviesGridView(scrollController: _scrollController),
-                  failure: SearchMoviesInfoText(text: AppLocalizations.of(context).somethingWentWrong),
+                  failure: SearchMoviesInfoText(text: context.tr.somethingWentWrong),
                 );
               },
             ),

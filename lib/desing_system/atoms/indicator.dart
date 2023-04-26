@@ -9,8 +9,8 @@ class Indicator extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: SizedBox(
-        width: AppSize.xxl.value(),
-        height: AppSize.xxl.value(),
+        width: AppSize.xxl.value,
+        height: AppSize.xxl.value,
         child: const CircularProgressIndicator(),
       ),
     );

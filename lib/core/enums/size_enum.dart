@@ -12,7 +12,7 @@ enum AppSize {
 
   final num _size;
 
-  double value() {
+  double get value {
     return (_scaling * _size).toDouble();
   }
 }

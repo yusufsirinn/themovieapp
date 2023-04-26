@@ -9,7 +9,7 @@ enum AppPadding {
 
   final double _size;
 
-  EdgeInsetsGeometry value() {
+  EdgeInsetsGeometry get all {
     return EdgeInsets.all(_size);
   }
 }

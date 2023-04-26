@@ -25,18 +25,18 @@ class _MovieDetailsViewState extends State<MovieDetailsView> {
             const MovieBackdrop(),
             SafeArea(
               child: Padding(
-                padding: AppPadding.large.value(),
+                padding: AppPadding.large.all,
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const MoviePoster(),
-                    SizedBox(width: AppSize.s.value()),
+                    SizedBox(width: AppSize.s.value),
                     BlocBuilder<MovieDetailsBloc, MovieDetailsState>(builder: (context, state) {
                       return ViewStateWidget(
                         status: state.status,
                         success: const MovieOverview(),
                         failure: Center(
-                          child: Text(AppLocalizations.of(context).somethingWentWrong),
+                          child: Text(context.tr.somethingWentWrong),
                         ),
                         loading: const Expanded(child: Indicator()),
                       );

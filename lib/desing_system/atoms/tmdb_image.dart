@@ -29,7 +29,7 @@ class TMDBImage extends StatelessWidget {
       child: Text(
         '🎬',
         style: TextStyle(
-          fontSize: AppSize.xxl.value().toDouble(),
+          fontSize: AppSize.xxl.value,
         ),
       ),
     );

@@ -7,6 +7,7 @@ export 'enums/path_enum.dart';
 export 'enums/size_enum.dart';
 export 'enums/status_enum.dart';
 export 'extensions/scroll_controller_extensions.dart';
+export 'extensions/context_extensions.dart';
 export 'localization/tmdb_app_localizations.dart';
 export 'managers/network/interceptors/api_key_intercepter.dart';
 export 'managers/network/interceptors/app_log_interceptor.dart';

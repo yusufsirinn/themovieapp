@@ -10,7 +10,7 @@ class SearchMoviesInfoText extends StatelessWidget {
         child: Center(
       child: Text(
         text ?? '',
-        style: Theme.of(context).textTheme.bodyLarge,
+        style: context.theme.textTheme.bodyLarge,
       ),
     ));
   }

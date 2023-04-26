@@ -13,7 +13,7 @@ class MoviesGridView extends StatelessWidget {
       child: Scrollbar(
         controller: scrollController,
         child: GridView.builder(
-          padding: AppPadding.medium.value(),
+          padding: AppPadding.medium.all,
           gridDelegate: _moviesGridViewDelegate,
           controller: scrollController,
           itemCount: count,
