@@ -6,6 +6,6 @@ import '../core.dart';
 
 EventTransformer<T> droppableTransformer<T>() {
   return ((events, mapper) {
-    return droppable<T>().call(events.throttle(AppDuration.low.value), mapper);
+    return droppable<T>().call(events.throttle(AppDuration.low.time), mapper);
   });
 }

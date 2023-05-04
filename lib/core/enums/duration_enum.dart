@@ -7,7 +7,7 @@ enum AppDuration {
 
   final int _seconds;
 
-  Duration get value {
+  Duration get time {
     return Duration(seconds: _seconds);
   }
 }

@@ -4,7 +4,7 @@ export 'constants/app_constants.dart';
 export 'enums/duration_enum.dart';
 export 'enums/padding_enum.dart';
 export 'enums/path_enum.dart';
-export 'enums/size_enum.dart';
+export 'enums/dimension_enum.dart';
 export 'enums/status_enum.dart';
 export 'extensions/scroll_controller_extensions.dart';
 export 'extensions/context_extensions.dart';

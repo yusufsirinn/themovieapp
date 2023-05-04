@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-enum AppSize {
+enum AppDimension {
   xs(1),
   s(2),
   m(3),
@@ -8,16 +8,16 @@ enum AppSize {
   xl(6),
   xxl(8);
 
-  const AppSize(this._size);
+  const AppDimension(this._size);
 
   final num _scaling = 4;
 
   final num _size;
 
-  double get value {
+  double get size {
     return (_scaling * _size).toDouble();
   }
 
-  SizedBox get width => SizedBox(width: value);
-  SizedBox get height => SizedBox(height: value);
+  SizedBox get width => SizedBox(width: size);
+  SizedBox get height => SizedBox(height: size);
 }

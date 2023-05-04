@@ -19,8 +19,8 @@ class MoviePoster extends StatelessWidget {
             TMDBImage(path: movie?.posterPath),
             Container(
               margin: AppPadding.large.all,
-              width: AppSize.xxl.value,
-              height: AppSize.xxl.value,
+              width: AppDimension.xxl.size,
+              height: AppDimension.xxl.size,
               decoration: BoxDecoration(
                 color: Colors.white,
                 border: Border.all(
