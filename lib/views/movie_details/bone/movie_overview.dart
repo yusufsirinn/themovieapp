@@ -16,7 +16,7 @@ class MovieOverview extends StatelessWidget {
               movie?.overview ?? '',
               style: const TextStyle(color: Colors.white),
             ),
-            SizedBox(height: AppSize.m.value),
+            AppSize.m.height,
             for (var genre in movie?.genres ?? [])
               Row(
                 children: [
@@ -25,7 +25,7 @@ class MovieOverview extends StatelessWidget {
                     color: Colors.white,
                     size: AppSize.s.value,
                   ),
-                  SizedBox(width: AppSize.s.value),
+                  AppSize.s.width,
                   Text(
                     genre.name ?? '',
                     style: context.theme.textTheme.bodyMedium?.copyWith(color: Colors.white),

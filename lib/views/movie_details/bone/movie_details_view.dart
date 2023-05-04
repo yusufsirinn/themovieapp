@@ -30,7 +30,7 @@ class _MovieDetailsViewState extends State<MovieDetailsView> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const MoviePoster(),
-                    SizedBox(width: AppSize.s.value),
+                    AppSize.s.width,
                     BlocBuilder<MovieDetailsBloc, MovieDetailsState>(builder: (context, state) {
                       return ViewStateWidget(
                         status: state.status,
