@@ -9,18 +9,21 @@ class TMDBImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (path == null) return _placeHolder();
-    return Image.network(
-      _imageTMDBFullUrl(path),
-      fit: BoxFit.fitHeight,
-      loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
-        if (loadingProgress == null) {
-          return child;
-        }
-        return _placeHolder();
-      },
-      errorBuilder: (BuildContext context, Object object, StackTrace? stackTrace) {
-        return _placeHolder();
-      },
+    return Hero(
+      tag: path ?? '',
+      child: Image.network(
+        _imageTMDBFullUrl(path),
+        fit: BoxFit.fitHeight,
+        loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
+          if (loadingProgress == null) {
+            return child;
+          }
+          return _placeHolder();
+        },
+        errorBuilder: (BuildContext context, Object object, StackTrace? stackTrace) {
+          return _placeHolder();
+        },
+      ),
     );
   }
 
