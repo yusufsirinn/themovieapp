@@ -14,6 +14,7 @@ export 'managers/network/interceptors/app_log_interceptor.dart';
 export 'managers/network/models/error.dart';
 export 'managers/network/models/response.dart';
 export 'managers/network/network_service.dart';
+export 'managers/navigator/app_navigator.dart';
 export 'utils/debouncer_mixin.dart';
 export 'utils/event_transformer_utils.dart';
 export 'utils/logger.dart';

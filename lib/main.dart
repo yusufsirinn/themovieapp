@@ -17,6 +17,7 @@ class TMDBApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(),
       home: const SearchMoviesPage(),
+      navigatorKey: AppNavigator.instance.navigatorKey,
       localizationsDelegates: TMDBAppLocalizations.localizationsDelegates,
       supportedLocales: TMDBAppLocalizations.supportedLocales,
     );
