@@ -12,9 +12,8 @@ class MoviePoster extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var size = context.msize;
     return SizedBox(
-      width: size.width * .3,
+      width: context.msize.width * .3,
       child: AspectRatio(
         aspectRatio: 2 / 3,
         child: Stack(

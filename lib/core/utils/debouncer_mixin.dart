@@ -6,7 +6,7 @@ mixin DebounceMixin {
   CancelableOperation<void>? _cancelableOperation;
 
   Future<void> debounce(Function action) async {
-    _cancelableOperation?.cancel();
+    await _cancelableOperation?.cancel();
     _cancelableOperation = CancelableOperation.fromFuture(
       Future.delayed(AppDuration.low.time),
     );

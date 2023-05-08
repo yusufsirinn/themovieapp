@@ -9,8 +9,14 @@ class MovieBackdrop extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        SizedBox.fromSize(size: context.msize, child: TMDBImage(path: backdropPath)),
-        SizedBox.fromSize(size: context.msize, child: const ColoredBox(color: Colors.black38))
+        SizedBox.fromSize(
+          size: context.msize,
+          child: TMDBImage(path: backdropPath),
+        ),
+        SizedBox.fromSize(
+          size: context.msize,
+          child: const ColoredBox(color: Colors.black38),
+        )
       ],
     );
   }

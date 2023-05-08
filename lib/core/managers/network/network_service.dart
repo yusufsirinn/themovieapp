@@ -40,7 +40,7 @@ class NetworkManager {
     try {
       var response = await _client.fetch(requestOptions);
       if (response.statusCode == HttpStatus.ok) {
-        var data = model.fromJson(response.data) as T;
+        T data = model.fromJson(response.data) as T;
         return Response<T>(response: data);
       } else {
         throw Exception(response.data);

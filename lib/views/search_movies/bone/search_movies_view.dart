@@ -24,7 +24,7 @@ class _SearchMoviesViewState extends State<SearchMoviesView> {
     super.dispose();
   }
 
-  _onScroll() {
+  void _onScroll() {
     if (isBottom) {
       context.read<SearchMoviesBloc>().add(const MoreMovies());
     }
@@ -41,12 +41,13 @@ class _SearchMoviesViewState extends State<SearchMoviesView> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        top: true,
         child: Column(
           children: [
             SearchMoviesTextField(
               onChange: (value) {
-                context.read<SearchMoviesBloc>().add(SearchMovies(query: value));
+                context.read<SearchMoviesBloc>().add(
+                      SearchMovies(query: value),
+                    );
                 _scrollController.jumpToTop();
               },
             ),

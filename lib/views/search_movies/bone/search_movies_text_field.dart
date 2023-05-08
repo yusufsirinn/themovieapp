@@ -4,7 +4,11 @@ class SearchMoviesTextField extends StatefulWidget {
   final void Function(String) onChange;
   final int minLengthForWordToSearch;
 
-  const SearchMoviesTextField({Key? key, required this.onChange, this.minLengthForWordToSearch = 2}) : super(key: key);
+  const SearchMoviesTextField({
+    Key? key,
+    required this.onChange,
+    this.minLengthForWordToSearch = 2,
+  }) : super(key: key);
 
   @override
   State<SearchMoviesTextField> createState() => _SearchMoviesTextFieldState();
@@ -35,7 +39,7 @@ class _SearchMoviesTextFieldState extends State<SearchMoviesTextField> with Debo
     );
   }
 
-  _onChanged(String value) {
+  void _onChanged(String value) {
     debounce(
       () {
         if (value.length >= widget.minLengthForWordToSearch) {

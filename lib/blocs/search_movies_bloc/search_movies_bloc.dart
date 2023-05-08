@@ -38,8 +38,8 @@ class SearchMoviesBloc extends Bloc<SearchMoviesEvent, SearchMoviesState> {
 
   Future<void> _onMoreMovies(MoreMovies event, Emitter<SearchMoviesState> emit) async {
     if (state.hasMax) return;
-    var moreMoviesEmitter = MoreMoviesEmitter(emit, state);
-    var response = await _service.searchMovies(
+    final moreMoviesEmitter = MoreMoviesEmitter(emit, state);
+    final response = await _service.searchMovies(
       query: state.query,
       page: state.page + 1,
     );

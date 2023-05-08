@@ -6,7 +6,7 @@ class MoviesGridView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var state = context.read<SearchMoviesBloc>().state;
+    final state = context.read<SearchMoviesBloc>().state;
     var count = state.movies.length;
     if (!state.hasMax) count++;
     return Expanded(
@@ -17,13 +17,13 @@ class MoviesGridView extends StatelessWidget {
           gridDelegate: _moviesGridViewDelegate,
           controller: scrollController,
           itemCount: count,
-          itemBuilder: ((context, index) {
+          itemBuilder: (context, index) {
             if (index >= state.movies.length) {
               return const Indicator();
             } else {
               return MovieGridTile(movie: state.movies[index]);
             }
-          }),
+          },
         ),
       ),
     );
