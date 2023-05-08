@@ -25,16 +25,9 @@ class _SearchMoviesViewState extends State<SearchMoviesView> {
   }
 
   void _onScroll() {
-    if (isBottom) {
+    if (_scrollController.isBottom) {
       context.read<SearchMoviesBloc>().add(const MoreMovies());
     }
-  }
-
-  bool get isBottom {
-    if (!_scrollController.hasClients) return false;
-    var maxScroll = _scrollController.position.maxScrollExtent;
-    var currentScroll = _scrollController.offset;
-    return currentScroll == maxScroll;
   }
 
   @override

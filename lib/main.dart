@@ -15,7 +15,7 @@ class TMDBApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(),
+      theme: ThemeData.light(),
       home: const SearchMoviesPage(),
       navigatorKey: AppNavigator.instance.navigatorKey,
       localizationsDelegates: TMDBAppLocalizations.localizationsDelegates,
