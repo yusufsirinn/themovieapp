@@ -1,23 +1,26 @@
 part of '../movie_details_page.dart';
 
 class MovieOverview extends StatelessWidget {
+  final String? overview;
+  final List<String?>? names;
   const MovieOverview({
     Key? key,
+    required this.overview,
+    required this.names,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    var movie = context.read<MovieDetailsBloc>().state.movie;
     return Expanded(
       child: SingleChildScrollView(
         child: Column(
           children: [
             Text(
-              movie?.overview ?? '',
+              overview ?? '',
               style: const TextStyle(color: Colors.white),
             ),
             AppDimension.m.height,
-            for (var genre in movie?.genres ?? [])
+            for (var name in names ?? [])
               Row(
                 children: [
                   Icon(
@@ -27,7 +30,7 @@ class MovieOverview extends StatelessWidget {
                   ),
                   AppDimension.s.width,
                   Text(
-                    genre.name ?? '',
+                    name ?? '',
                     style: context.theme.textTheme.bodyMedium?.copyWith(color: Colors.white),
                   )
                 ],

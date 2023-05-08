@@ -45,6 +45,8 @@ class MovieDetails extends Movie {
       overview: movieDetails.overview,
     );
   }
+
+  List<String?>? get genresNames => genres?.map((genre) => genre.name).toList();
 }
 
 class Genres {

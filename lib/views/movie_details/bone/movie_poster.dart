@@ -1,14 +1,18 @@
 part of '../movie_details_page.dart';
 
 class MoviePoster extends StatelessWidget {
+  final String? posterPath;
+  final num? voteAverage;
+
   const MoviePoster({
     Key? key,
+    required this.posterPath,
+    required this.voteAverage,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     var size = context.msize;
-    var movie = context.read<MovieDetailsBloc>().state.movie;
     return SizedBox(
       width: size.width * .3,
       child: AspectRatio(
@@ -16,7 +20,7 @@ class MoviePoster extends StatelessWidget {
         child: Stack(
           alignment: Alignment.bottomLeft,
           children: [
-            TMDBImage(path: movie?.posterPath),
+            TMDBImage(path: posterPath),
             Container(
               margin: AppPadding.large.all,
               width: AppDimension.xxl.size,
@@ -29,7 +33,7 @@ class MoviePoster extends StatelessWidget {
                 ),
               ),
               alignment: Alignment.center,
-              child: Text(movie?.voteAverage.toString() ?? ''),
+              child: Text(voteAverage?.toString() ?? ''),
             )
           ],
         ),

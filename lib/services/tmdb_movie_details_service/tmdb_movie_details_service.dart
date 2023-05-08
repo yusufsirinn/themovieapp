@@ -2,9 +2,7 @@ import '../../../models/movie_details_model.dart';
 import '../../core/core.dart';
 
 abstract class ITMDBMovieDetailsService {
-  FutureResponse<MovieDetails> fetchMovieDetails({
-    required int id,
-  });
+  FutureResponse<MovieDetails> fetchMovieDetails({required int id});
 }
 
 class TMDBMovieDetailsService extends ITMDBMovieDetailsService {

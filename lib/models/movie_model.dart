@@ -14,7 +14,7 @@ class Movie extends BaseResponseModel {
     this.voteAverage,
   });
 
-  toMovieDetail() {
+  MovieDetails toMovieDetail() {
     return MovieDetails(
       id: id,
       posterPath: posterPath,

@@ -7,11 +7,12 @@ class SearchMoviesInfoText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-        child: Center(
-      child: Text(
-        text ?? '',
-        style: context.theme.textTheme.bodyLarge,
+      child: Center(
+        child: Text(
+          text ?? '',
+          style: context.theme.textTheme.bodyLarge,
+        ),
       ),
-    ));
+    );
   }
 }

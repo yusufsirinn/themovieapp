@@ -8,7 +8,7 @@ class TMDBImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (path == null) return _placeHolder();
+    if (path == null) return const _PlaceHolder();
     return Hero(
       tag: path ?? '',
       child: Image.network(
@@ -18,16 +18,25 @@ class TMDBImage extends StatelessWidget {
           if (loadingProgress == null) {
             return child;
           }
-          return _placeHolder();
+          return const _PlaceHolder();
         },
         errorBuilder: (BuildContext context, Object object, StackTrace? stackTrace) {
-          return _placeHolder();
+          return const _PlaceHolder();
         },
       ),
     );
   }
 
-  Widget _placeHolder() {
+  String _imageTMDBFullUrl(String? path) {
+    return 'https://image.tmdb.org/t/p/original/$path';
+  }
+}
+
+class _PlaceHolder extends StatelessWidget {
+  const _PlaceHolder();
+
+  @override
+  Widget build(BuildContext context) {
     return Center(
       child: Text(
         '🎬',
@@ -36,9 +45,5 @@ class TMDBImage extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  String _imageTMDBFullUrl(String? path) {
-    return 'https://image.tmdb.org/t/p/original/$path';
   }
 }

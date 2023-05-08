@@ -20,23 +20,29 @@ class _MovieDetailsViewState extends State<MovieDetailsView> {
     return GestureDetector(
       onVerticalDragEnd: (_) => AppNavigator.instance.pop(),
       child: Scaffold(
-        appBar: MovieDetailsAppBar(title: context.read<MovieDetailsBloc>().state.movie?.title),
+        appBar: MovieDetailsAppBar(title: widget.movieDetails.title),
         body: Center(
           child: Stack(
             children: [
-              const MovieBackdrop(),
+              MovieBackdrop(backdropPath: context.watch<MovieDetailsBloc>().state.movie?.backdropPath),
               SafeArea(
                 child: Padding(
                   padding: AppPadding.large.all,
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const MoviePoster(),
+                      MoviePoster(
+                        posterPath: widget.movieDetails.posterPath,
+                        voteAverage: widget.movieDetails.voteAverage,
+                      ),
                       AppDimension.s.width,
                       BlocBuilder<MovieDetailsBloc, MovieDetailsState>(builder: (context, state) {
                         return ViewStateWidget(
                           status: state.status,
-                          success: const MovieOverview(),
+                          success: MovieOverview(
+                            overview: state.movie?.overview,
+                            names: state.movie?.genresNames,
+                          ),
                           failure: Center(
                             child: Text(context.tr.somethingWentWrong),
                           ),
