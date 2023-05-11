@@ -12,7 +12,7 @@ dependencies:
   bloc: ^8.0.3
   bloc_concurrency: ^0.2.0
   cupertino_icons: ^1.0.2
-  dio: ^4.0.6
+  dio: ^5.1.2
   equatable: ^2.0.3
   flutter:
     sdk: flutter
@@ -20,7 +20,7 @@ dependencies:
   flutter_dotenv: ^5.0.2
   flutter_localizations:
     sdk: flutter
-  intl: ^0.17.0
+  intl: ^0.18.0
   stream_transform: ^2.0.0
 
 dev_dependencies:
