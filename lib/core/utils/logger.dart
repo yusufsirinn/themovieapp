@@ -3,18 +3,18 @@ import 'dart:developer';
 import 'package:flutter/foundation.dart';
 
 class Logger {
-  static void success(String text) {
+  static void success(Object object) {
     if (kReleaseMode) return;
-    log('\x1B[32m📗 $text\x1B[0m', name: 'Success');
+    log('\x1B[32m📗 $object\x1B[0m', name: 'Success');
   }
 
-  static void info(String text) {
+  static void info(Object object) {
     if (kReleaseMode) return;
-    log('\x1B[33m📙 $text\x1B[0m', name: 'Info');
+    log('\x1B[33m📙 $object\x1B[0m', name: 'Info');
   }
 
-  static void error(String text) {
+  static void error(Object object) {
     if (kReleaseMode) return;
-    log('\x1B[31m📕 $text\x1B[0m', name: 'Error');
+    log('\x1B[31m📕 $object\x1B[0m', name: 'Error');
   }
 }

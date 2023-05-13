@@ -8,6 +8,8 @@ export 'enums/path_enum.dart';
 export 'enums/status_enum.dart';
 export 'extensions/context_extensions.dart';
 export 'extensions/scroll_controller_extensions.dart';
+export 'init/app_bloc_observer.dart';
+export 'init/app_setup.dart';
 export 'localization/tmdb_app_localizations.dart';
 export 'managers/navigator/app_navigator.dart';
 export 'managers/network/interceptors/api_key_intercepter.dart';
