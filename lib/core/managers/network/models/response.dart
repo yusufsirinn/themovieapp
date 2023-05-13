@@ -1,5 +1,4 @@
 import '../../../base/base_response_model.dart';
-
 import 'error.dart';
 
 abstract class IResponse<T extends BaseResponseModel> {

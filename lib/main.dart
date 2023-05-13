@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'views/search_movies/search_movies_page.dart';
 
 import 'core/core.dart';
-import 'views/search_movies/search_movies_page.dart';
 
 Future<void> main() async {
   await AppSetup.init();
@@ -17,6 +17,7 @@ class TMDBApp extends StatelessWidget {
       theme: ThemeData.light(),
       home: const SearchMoviesPage(),
       navigatorKey: AppNavigator.instance.navigatorKey,
+      navigatorObservers: AppNavigator.instance.navigatorObservers,
       localizationsDelegates: TMDBAppLocalizations.localizationsDelegates,
       supportedLocales: TMDBAppLocalizations.supportedLocales,
     );
