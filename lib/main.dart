@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'views/search_movies/search_movies_page.dart';
 
 import 'core/core.dart';
+import 'views/search_movies/search_movies_page.dart';
 
 Future<void> main() async {
   await AppSetup.init();

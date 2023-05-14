@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+
 import '../../core.dart';
 
 class AppNavigator {
@@ -12,6 +13,7 @@ class AppNavigator {
   GlobalKey<NavigatorState> get navigatorKey => _navigatorKey;
 
   List<NavigatorObserver> navigatorObservers = [
+    Analytics.observer,
     if (kDebugMode) NavigatorLogger(),
   ];
 
