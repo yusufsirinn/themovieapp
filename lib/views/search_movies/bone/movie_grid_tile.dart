@@ -9,7 +9,7 @@ class MovieGridTile extends StatelessWidget {
     var textTheme = context.theme.textTheme;
     return GestureDetector(
       onTap: () {
-        AppNavigator.instance.go(MovideDetailsPage(movieDetails: movie.toMovieDetail()));
+        AppNavigator.instance.go(MovieDetailsPage(movieDetails: movie.toMovieDetail()));
       },
       child: Card(
         margin: EdgeInsets.zero,

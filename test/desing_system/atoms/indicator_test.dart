@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:themovieapp/desing_system/atoms/indicator.dart';
+import 'package:themovieapp/design_system/atoms/indicator.dart';
 
 void main() {
   testWidgets(

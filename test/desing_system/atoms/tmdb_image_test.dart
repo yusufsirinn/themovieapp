@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:themovieapp/desing_system/atoms/tmdb_image.dart';
+import 'package:themovieapp/design_system/atoms/tmdb_image.dart';
 
 import '../../test_utils/pump_app.dart';
 
