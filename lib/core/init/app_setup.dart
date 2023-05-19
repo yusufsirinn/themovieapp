@@ -13,6 +13,7 @@ class AppSetup {
     WidgetsFlutterBinding.ensureInitialized();
     await dotenv.load(fileName: '.env');
     await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+    Analytics.init(AppFirebaseAnalytics());
     FlutterError.onError = (errorDetails) {
       FirebaseCrashlytics.instance.recordFlutterFatalError(errorDetails);
     };

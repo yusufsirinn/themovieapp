@@ -44,7 +44,7 @@ class _SearchMoviesTextFieldState extends State<SearchMoviesTextField> with Debo
       () {
         if (value.length >= widget.minLengthForWordToSearch) {
           widget.onChange(value);
-          Analytics.log(event: Event.movieSearched, parameters: EventParameter(value: value));
+          Analytics.instance.log(event: Event.movieSearched, parameters: EventParameter(value: value));
         }
       },
     );

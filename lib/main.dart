@@ -17,7 +17,7 @@ class TMDBApp extends StatelessWidget {
       theme: ThemeData.light(),
       home: const SearchMoviesPage(),
       navigatorKey: AppNavigator.instance.navigatorKey,
-      navigatorObservers: AppNavigator.instance.navigatorObservers,
+      navigatorObservers: [Analytics.instance.navigatorObserver],
       localizationsDelegates: TMDBAppLocalizations.localizationsDelegates,
       supportedLocales: TMDBAppLocalizations.supportedLocales,
     );
