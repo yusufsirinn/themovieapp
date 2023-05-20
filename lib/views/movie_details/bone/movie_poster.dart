@@ -32,7 +32,7 @@ class MoviePoster extends StatelessWidget {
                 ),
               ),
               alignment: Alignment.center,
-              child: Text(voteAverage?.toString() ?? ''),
+              child: Text(voteAverage?.toStringAsFixed(1) ?? ''),
             )
           ],
         ),
