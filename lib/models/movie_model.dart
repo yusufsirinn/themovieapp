@@ -14,6 +14,8 @@ class Movie extends BaseResponseModel {
     this.voteAverage,
   });
 
+  String get vote => voteAverage != null ? voteAverage!.toStringAsFixed(1) : '-';
+
   MovieDetails toMovieDetail() {
     return MovieDetails(
       id: id,

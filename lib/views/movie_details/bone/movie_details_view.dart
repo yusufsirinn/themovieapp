@@ -40,10 +40,7 @@ class _MovieDetailsViewState extends State<MovieDetailsView> {
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      MoviePoster(
-                        posterPath: widget.movieDetails.posterPath,
-                        voteAverage: widget.movieDetails.voteAverage,
-                      ),
+                      MoviePoster(movieDetails: widget.movieDetails),
                       AppDimension.s.width,
                       BlocBuilder<MovieDetailsBloc, MovieDetailsState>(
                         builder: (context, state) {

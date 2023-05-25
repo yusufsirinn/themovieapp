@@ -1,13 +1,11 @@
 part of '../movie_details_page.dart';
 
 class MoviePoster extends StatelessWidget {
-  final String? posterPath;
-  final num? voteAverage;
+  final MovieDetails movieDetails;
 
   const MoviePoster({
     Key? key,
-    required this.posterPath,
-    required this.voteAverage,
+    required this.movieDetails,
   }) : super(key: key);
 
   @override
@@ -19,7 +17,7 @@ class MoviePoster extends StatelessWidget {
         child: Stack(
           alignment: Alignment.bottomLeft,
           children: [
-            TMDBImage(path: posterPath),
+            TMDBImage(path: movieDetails.posterPath),
             Container(
               margin: AppPadding.large.all,
               width: AppDimension.xxl.size,
@@ -32,7 +30,7 @@ class MoviePoster extends StatelessWidget {
                 ),
               ),
               alignment: Alignment.center,
-              child: Text(voteAverage?.toStringAsFixed(1) ?? ''),
+              child: Text(movieDetails.vote),
             )
           ],
         ),

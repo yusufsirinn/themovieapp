@@ -28,7 +28,7 @@ class MovieGridTile extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      movie.voteAverage.toString(),
+                      movie.vote,
                       style: textTheme.labelLarge?.copyWith(color: Colors.white),
                     ),
                     Text(
