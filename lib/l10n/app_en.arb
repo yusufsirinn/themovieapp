@@ -1,5 +1,6 @@
 {
     "searchMovie": "You can search for a movie...",
     "somethingWentWrong": "Something went wrong!",
-    "query": "Query..."
+    "query": "Query...",
+    "title": "The Movie"
 }

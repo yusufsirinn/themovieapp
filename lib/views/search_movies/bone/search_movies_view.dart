@@ -33,6 +33,10 @@ class _SearchMoviesViewState extends State<SearchMoviesView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(context.tr.title),
+        backgroundColor: Colors.black38,
+      ),
       body: SafeArea(
         child: Column(
           children: [
