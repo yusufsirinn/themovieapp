@@ -2,5 +2,7 @@
     "searchMovie": "You can search for a movie...",
     "somethingWentWrong": "Something went wrong!",
     "query": "Query...",
-    "title": "The Movie"
+    "title": "The Movie Database",
+    "noUpdateAvailable": "No update available",
+    "downloading": "Downloading..."
 }

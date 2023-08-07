@@ -14,7 +14,7 @@ This project allows you to search and list movies.
 ## Libraries
 
 - flutter_localizations -> used for localization
-- flutter_bloc -> used for state managment
+- flutter_bloc -> used for state management
 - dio -> user for network request
 - bloc_concurrency -> used to not send multiple network requests
 - async -> used to trigger an action when the user stopped typing

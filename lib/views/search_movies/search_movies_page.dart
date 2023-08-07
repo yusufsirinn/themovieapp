@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../blocs/search_movies_bloc/search_movies_bloc.dart';
 import '../../core/core.dart';
 import '../../design_system/design_system.dart';
+import '../../design_system/molecules/tmdb_app_updater.dart';
 import '../../models/movie_model.dart';
 import '../../services/tmdb_search_movies_service/tmdb_search_movies_service.dart';
 import '../movie_details/movie_details_page.dart';
