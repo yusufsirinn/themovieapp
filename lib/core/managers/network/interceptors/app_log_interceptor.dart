@@ -19,7 +19,7 @@ class AppLogInterceptor extends Interceptor {
   }
 
   @override
-  void onError(DioError err, ErrorInterceptorHandler handler) {
+  void onError(DioException err, ErrorInterceptorHandler handler) {
     Logger.error(err.message.toString());
     return handler.next(err);
   }

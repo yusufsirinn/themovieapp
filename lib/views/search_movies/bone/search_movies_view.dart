@@ -35,7 +35,7 @@ class _SearchMoviesViewState extends State<SearchMoviesView> {
     return Scaffold(
       appBar: AppBar(
         title: Text(context.tr.title),
-        backgroundColor: Colors.orange,
+        backgroundColor: Colors.blue,
         actions: const [TMDBIAppUpdater()],
       ),
       body: SafeArea(

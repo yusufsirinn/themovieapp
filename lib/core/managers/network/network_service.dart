@@ -49,7 +49,7 @@ class NetworkManager {
       } else {
         throw Exception(response.data);
       }
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       return Response(error: Error(message: e.message.toString()));
     } catch (e) {
       return Response(error: Error(message: e.toString()));
