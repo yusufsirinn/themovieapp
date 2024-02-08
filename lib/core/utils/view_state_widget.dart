@@ -21,13 +21,13 @@ class ViewStateWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (status == Status.initial && initial != null) {
+    if (status.isInitial && initial != null) {
       return initial!;
-    } else if (status == Status.success && success != null) {
+    } else if (status.isSuccess && success != null) {
       return success!;
-    } else if (status == Status.failure && failure != null) {
+    } else if (status.isFailure && failure != null) {
       return failure!;
-    } else if (status == Status.loading && loading != null) {
+    } else if (status.isLoading && loading != null) {
       return loading!;
     } else if (defaultWidget != null) {
       return defaultWidget!;
