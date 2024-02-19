@@ -4,7 +4,7 @@ class MovieDetailsAppBar extends AppBar {
   MovieDetailsAppBar({String? title, Key? key})
       : super(
           key: key,
-          backgroundColor: Colors.black,
+          backgroundColor: Colors.white,
           elevation: 0,
           title: Text(title ?? ''),
         );
