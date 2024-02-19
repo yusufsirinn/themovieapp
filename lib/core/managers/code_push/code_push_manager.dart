@@ -22,4 +22,6 @@ class CodePushManager {
     await _shorebirdCodePush.downloadUpdateIfAvailable();
     Restart.restartApp.call();
   }
+
+  bool get isAvailable => _shorebirdCodePush.isShorebirdAvailable();
 }

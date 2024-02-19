@@ -22,15 +22,18 @@ class _TMDBIAppUpdaterState extends State<TMDBIAppUpdater> {
 
   @override
   Widget build(BuildContext context) {
+    if (!CodePushManager.instance.isAvailable) {
+      return const SizedBox();
+    }
     return IconButton(
       onPressed: _isCheckingForUpdate ? null : _checkForUpdate,
       icon: _isCheckingForUpdate
           ? const Indicator(
-              color: Colors.white,
+              color: Colors.black,
             )
           : const Icon(
               Icons.update,
-              color: Colors.white,
+              color: Colors.black,
             ),
     );
   }
