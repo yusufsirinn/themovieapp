@@ -16,7 +16,7 @@ part 'bone/search_movies_text_field.dart';
 part 'bone/search_movies_view.dart';
 
 class SearchMoviesPage extends StatefulWidget {
-  const SearchMoviesPage({Key? key}) : super(key: key);
+  const SearchMoviesPage({super.key});
 
   @override
   State<SearchMoviesPage> createState() => _SearchMoviesPageState();

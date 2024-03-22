@@ -10,14 +10,14 @@ class ViewStateWidget extends StatelessWidget {
   final Widget? loading;
   final Widget? defaultWidget;
   const ViewStateWidget({
-    Key? key,
+    super.key,
     required this.status,
     this.initial,
     this.success,
     this.failure,
     this.loading,
     this.defaultWidget,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

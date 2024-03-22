@@ -2,7 +2,7 @@ part of '../search_movies_page.dart';
 
 class MovieGridTile extends StatelessWidget {
   final Movie movie;
-  const MovieGridTile({Key? key, required this.movie}) : super(key: key);
+  const MovieGridTile({super.key, required this.movie});
 
   @override
   Widget build(BuildContext context) {

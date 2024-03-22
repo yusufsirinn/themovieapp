@@ -4,9 +4,9 @@ class MoviePoster extends StatelessWidget {
   final MovieDetails movieDetails;
 
   const MoviePoster({
-    Key? key,
+    super.key,
     required this.movieDetails,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

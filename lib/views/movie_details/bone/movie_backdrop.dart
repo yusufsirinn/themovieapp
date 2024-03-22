@@ -3,7 +3,7 @@ part of '../movie_details_page.dart';
 class MovieBackdrop extends StatelessWidget {
   final String? backdropPath;
 
-  const MovieBackdrop({Key? key, required this.backdropPath}) : super(key: key);
+  const MovieBackdrop({super.key, required this.backdropPath});
 
   @override
   Widget build(BuildContext context) {

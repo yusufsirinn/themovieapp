@@ -4,7 +4,7 @@ import '../../core/core.dart';
 
 class TMDBImage extends StatelessWidget {
   final String? path;
-  const TMDBImage({Key? key, this.path}) : super(key: key);
+  const TMDBImage({super.key, this.path});
 
   @override
   Widget build(BuildContext context) {

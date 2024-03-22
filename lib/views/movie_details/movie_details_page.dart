@@ -15,7 +15,7 @@ part 'bone/movie_poster.dart';
 
 class MovieDetailsPage extends StatefulWidget {
   final MovieDetails movieDetails;
-  const MovieDetailsPage({Key? key, required this.movieDetails}) : super(key: key);
+  const MovieDetailsPage({super.key, required this.movieDetails});
 
   @override
   State<MovieDetailsPage> createState() => _MovieDetailsPageState();

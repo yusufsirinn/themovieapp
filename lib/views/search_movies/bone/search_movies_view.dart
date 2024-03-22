@@ -1,7 +1,7 @@
 part of '../search_movies_page.dart';
 
 class SearchMoviesView extends StatefulWidget {
-  const SearchMoviesView({Key? key}) : super(key: key);
+  const SearchMoviesView({super.key});
 
   @override
   State<SearchMoviesView> createState() => _SearchMoviesViewState();

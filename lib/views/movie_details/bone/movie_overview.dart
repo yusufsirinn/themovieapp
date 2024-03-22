@@ -4,10 +4,10 @@ class MovieOverview extends StatelessWidget {
   final String? overview;
   final List<String?>? names;
   const MovieOverview({
-    Key? key,
+    super.key,
     required this.overview,
     required this.names,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

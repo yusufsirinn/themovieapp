@@ -2,7 +2,7 @@ part of '../search_movies_page.dart';
 
 class MoviesGridView extends StatelessWidget {
   final ScrollController scrollController;
-  const MoviesGridView({Key? key, required this.scrollController}) : super(key: key);
+  const MoviesGridView({super.key, required this.scrollController});
 
   @override
   Widget build(BuildContext context) {

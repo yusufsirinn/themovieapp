@@ -3,9 +3,9 @@ part of '../movie_details_page.dart';
 class MovieDetailsView extends StatefulWidget {
   final MovieDetails movieDetails;
   const MovieDetailsView({
-    Key? key,
+    super.key,
     required this.movieDetails,
-  }) : super(key: key);
+  });
 
   @override
   State<MovieDetailsView> createState() => _MovieDetailsViewState();

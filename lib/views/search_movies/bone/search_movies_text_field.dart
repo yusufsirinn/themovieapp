@@ -5,10 +5,10 @@ class SearchMoviesTextField extends StatefulWidget {
   final int minLengthForWordToSearch;
 
   const SearchMoviesTextField({
-    Key? key,
+    super.key,
     required this.onChange,
     this.minLengthForWordToSearch = 2,
-  }) : super(key: key);
+  });
 
   @override
   State<SearchMoviesTextField> createState() => _SearchMoviesTextFieldState();

@@ -4,7 +4,7 @@ import '../../core/core.dart';
 
 class Indicator extends StatelessWidget {
   final Color? color;
-  const Indicator({Key? key, this.color}) : super(key: key);
+  const Indicator({super.key, this.color});
 
   @override
   Widget build(BuildContext context) {

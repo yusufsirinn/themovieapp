@@ -9,7 +9,7 @@ Future<void> main() async {
 }
 
 class TMDBApp extends StatelessWidget {
-  const TMDBApp({Key? key}) : super(key: key);
+  const TMDBApp({super.key});
 
   @override
   Widget build(BuildContext context) {
